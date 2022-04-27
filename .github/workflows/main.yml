@@ -22,6 +22,13 @@ jobs:
       - run: flutter pub get
       - run: flutter build web --release
 
+      - run: ls
+      - run: |
+          cd build/web
+          ls
+          cd assets
+          ls
+
       - run: |
           cd build/web
           git init
