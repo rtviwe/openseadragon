@@ -14,7 +14,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="/openseadragon/"/>
+  <base href="/"/>
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -31,43 +31,20 @@
 
   <title>openseadragon</title>
   <link rel="manifest" href="manifest.json">
-  <style>
-    #app-container {
-      height: 800px;
-      width: 600px;
-      background-color: grey;
-      margin: 0 auto;
-      border: none;
-    }
-  </style>
 </head>
 <body>
-  <div id="openseadragon1" style="width: 800px; height: 800px;"></div>
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function() {
-        navigator.serviceWorker.register("flutter_service_worker.js");
-      });
-    }
-  </script>
-
   <script src="https://www.toptal.com/developers/hastebin/raw/ziqefovawu"></script>
   <script>
-    var viewer = OpenSeadragon({
+    setTimeout(() => {
+      var viewer = OpenSeadragon({
         id: "openseadragon1",
         prefixUrl: "/test_files/",
         tileSources: "/test.dzi"
     });
+    }, 10000);
   </script>
 
   <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-            navigator.serviceWorker.register('/flutter_service_worker.js');
-        });
-    }
-  </script>
-  <!-- <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
     function loadMainDartJs() {
@@ -76,9 +53,14 @@
       }
       scriptLoaded = true;
       var scriptTag = document.createElement('script');
-      scriptTag.src = 'main.dart.js';
+      scriptTag.src = '/main.dart.js';
       scriptTag.type = 'application/javascript';
       document.body.append(scriptTag);
+
+      var divTag = document.createElement('div');
+      divTag.id = 'openseadragon1';
+      divTag.style = 'width: 800px; height: 800px; background:red; position:relative; z-index:1000';
+      document.body.append(divTag);
     }
 
     if ('serviceWorker' in navigator) {
@@ -130,14 +112,6 @@
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
     }
-  </script> -->
-
-  <flutter-app width="600px" height="800px"></flutter-app>
-  <script src="flutter-app.js"></script>
-
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-
+  </script>
 </body>
 </html>
