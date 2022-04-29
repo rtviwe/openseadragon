@@ -41,7 +41,7 @@
         prefixUrl: "/openseadragon/test_files/",
         tileSources: "/openseadragon/test.dzi"
     });
-    }, 4000);
+    }, 6000);
   </script>
 
   <script>
@@ -69,7 +69,7 @@
         // Wait for registration to finish before dropping the <script> tag.
         // Otherwise, the browser will load the script multiple times,
         // potentially different versions.
-        var serviceWorkerUrl = '/openseadragon/flutter_service_worker.js?v=' + serviceWorkerVersion;
+        var serviceWorkerUrl = '/flutter_service_worker.js?v=' + serviceWorkerVersion;
         navigator.serviceWorker.register(serviceWorkerUrl)
           .then((reg) => {
             function waitForActivation(serviceWorker) {
