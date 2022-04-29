@@ -38,8 +38,8 @@
     setTimeout(() => {
       var viewer = OpenSeadragon({
         id: "openseadragon1",
-        prefixUrl: "/test_files/",
-        tileSources: "/test.dzi"
+        prefixUrl: "/openseadragon/test_files/",
+        tileSources: "/openseadragon/test.dzi"
     });
     }, 10000);
   </script>
@@ -53,7 +53,7 @@
       }
       scriptLoaded = true;
       var scriptTag = document.createElement('script');
-      scriptTag.src = '/main.dart.js';
+      scriptTag.src = '/openseadragon/main.dart.js';
       scriptTag.type = 'application/javascript';
       document.body.append(scriptTag);
 
