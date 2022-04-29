@@ -2,7 +2,7 @@
     "name": "openseadragon",
     "short_name": "openseadragon",
     "start_url": ".",
-    "scope": ".",
+    "scope": "/openseadragon/",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
