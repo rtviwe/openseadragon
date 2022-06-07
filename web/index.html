@@ -31,9 +31,17 @@
 
   <title>openseadragon</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- <script>
+    var serviceWorkerVersion = null;
+  </script>
+  <script src="flutter.js" defer></script> -->
 </head>
 <body>
   <script src="/openseadragon/openseadragon.min.js"></script>
+  
+  <div id="openseadragon1" style="width: 800px; height: 800px; position:relative; z-index:1000" />
+
   <script>
     setTimeout(() => {
       var viewer = OpenSeadragon({
@@ -43,6 +51,20 @@
     });
     }, 6000);
   </script>
+
+  <!-- <script>
+    window.addEventListener('load', function(ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function(engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function(appRunner) {
+        return appRunner.runApp();
+      });
+    });
+  </script> -->
 
   <script>
     var serviceWorkerVersion = null;
@@ -57,10 +79,10 @@
       scriptTag.type = 'application/javascript';
       document.body.append(scriptTag);
 
-      var divTag = document.createElement('div');
-      divTag.id = 'openseadragon1';
-      divTag.style = 'width: 800px; height: 800px; position:relative; z-index:1000';
-      document.body.append(divTag);
+      // var divTag = document.createElement('div');
+      // divTag.id = 'openseadragon1';
+      // divTag.style = 'width: 800px; height: 800px; position:relative; z-index:1000';
+      // document.body.append(divTag);
     }
 
     if ('serviceWorker' in navigator) {
